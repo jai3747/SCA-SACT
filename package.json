@@ -1,0 +1,17 @@
+{
+  "name": "sample-sca-sast-app",
+  "version": "1.0.0",
+  "description": "A simple Node.js application for SCA and SAST example",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "audit-ci": "^4.0.0",
+    "eslint": "^7.32.0"
+  }
+}
+
