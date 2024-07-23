@@ -26,3 +26,20 @@ jobs:
 
     - name: Run ESLint
       run: npx eslint .
+
+    - name: Set up Snyk
+      uses: snyk/actions/setup@v2
+      with:
+        version: 'latest' # specify the version of Snyk CLI
+
+    - name: Authenticate Snyk
+      run: snyk auth ${{ secrets.SNYK_TOKEN }}
+
+    - name: Run Snyk to check for vulnerabilities
+      run: snyk test
+
+    - name: Install Semgrep
+      run: pip install semgrep
+
+    - name: Run Semgrep
+      run: semgrep --config p/ci
